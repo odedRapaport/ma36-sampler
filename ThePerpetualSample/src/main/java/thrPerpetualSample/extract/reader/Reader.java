@@ -1,7 +1,7 @@
 package thrPerpetualSample.extract.reader;
 
-import java.io.BufferedReader;
+import java.util.List;
 
 public interface Reader {
-    BufferedReader read(String path);
+    List<String[]> read(String path);
 }
