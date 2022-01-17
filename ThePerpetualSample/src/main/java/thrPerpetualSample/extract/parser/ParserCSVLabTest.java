@@ -1,6 +1,5 @@
 package thrPerpetualSample.extract.parser;
 
-import thrPerpetualSample.data.MadaReport;
 import thrPerpetualSample.data.OriginalLabTest;
 import thrPerpetualSample.data.PerpetualSampleObject;
 
