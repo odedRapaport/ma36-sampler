@@ -9,6 +9,7 @@ import java.util.List;
 public class ParserCSVLabTest implements Parser{
     @Override
     public List<PerpetualSampleObject> parse(List<String[]> records) {
+        records.remove(0);
         ArrayList<PerpetualSampleObject> tests = new ArrayList<>();
         for (String[] record:
                 records) {

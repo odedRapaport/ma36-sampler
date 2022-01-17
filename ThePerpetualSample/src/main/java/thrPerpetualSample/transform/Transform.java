@@ -9,8 +9,9 @@ public class Transform {
     private List<PerpetualSampleObject> objects;
     private List<Transformation> transformations;
 
-    public Transform(List<PerpetualSampleObject> objects) {
+    public Transform(List<PerpetualSampleObject> objects, List<Transformation> transformations) {
         this.objects = objects;
+        this.transformations = transformations;
     }
 
     public List<PerpetualSampleObject> transform() {

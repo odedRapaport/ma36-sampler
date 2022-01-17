@@ -10,6 +10,7 @@ public class ParserCSVMadaReport implements Parser{
 
     @Override
     public List<PerpetualSampleObject> parse(List<String[]> records) {
+        records.remove(0);
         ArrayList<PerpetualSampleObject> reports = new ArrayList<>();
         for (String[] record:
              records) {
