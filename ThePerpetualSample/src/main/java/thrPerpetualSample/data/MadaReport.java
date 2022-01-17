@@ -1,6 +1,6 @@
 package thrPerpetualSample.data;
 
-public class MadaReport {
+public class MadaReport extends PerpetualSampleObject{
     private String mdaCode, idNum, idType, firstName, lastName, city, street, buildingNumber, barcode, getDate, takeDate, resultDate;
 
     public MadaReport(String mdaCode, String idNum, String idType, String firstName, String lastName, String city, String street, String buildingNumber, String barcode, String getDate, String takeDate, String resultDate) {

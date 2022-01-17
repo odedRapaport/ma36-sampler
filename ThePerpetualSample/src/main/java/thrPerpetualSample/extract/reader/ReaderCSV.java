@@ -10,7 +10,7 @@ import java.util.List;
 public class ReaderCSV implements Reader {
     @Override
     public List<String[]> read(String path) {
-        try (CSVReader reader = new CSVReader(new FileReader("file.csv"))) {
+        try (CSVReader reader = new CSVReader(new FileReader(path))) {
             List<String[]> records = reader.readAll();
             return records;
         } catch (IOException | CsvException e) {
