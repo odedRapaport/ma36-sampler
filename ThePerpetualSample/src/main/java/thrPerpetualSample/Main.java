@@ -15,14 +15,5 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Extract extract = new Extract("C:\\Users\\עודד\\Desktop\\ThePerpetualSample\\ThePerpetualSample\\src\\main\\resources\\LabTests.csv", new ReaderCSV(), new ParserCSVLabTest());
-        List<PerpetualSampleObject> objects = extract.extract();
-        ArrayList<Transformation> transformations = new ArrayList<>();
-        transformations.add(new AddHealthCareDetails());
-        Transform transform = new Transform(objects,transformations);
-        objects = transform.transform();
-        Load load = new Load(objects, "C:\\Users\\עודד\\Desktop\\ThePerpetualSampleFiles\\LABTESTS\\", new WriterXml(), 200);
-        load.load();
-        System.out.println();
     }
 }
