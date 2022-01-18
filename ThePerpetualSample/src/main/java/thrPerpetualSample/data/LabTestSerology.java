@@ -17,21 +17,20 @@ public class LabTestSerology extends PerpetualSampleObject {
     }
 
     public boolean isValid() {
-        boolean isValid = true;
-        if (idType.equals("0") && idNum.length() != 9 || labcode.length() != 5) {
-            isValid = false;
+        if ((idType.equals("0") && idNum.length() != 9) || labcode.length() != 5) {
+            return false;
         } else if (!isNumber((Character.toString(labcode.charAt(0)))) || !isNumber((Character.toString(labcode.charAt(1))))
                 || isNumber((Character.toString(labcode.charAt(2)))) || isNumber((Character.toString(labcode.charAt(3))))
                 || !isNumber((Character.toString(labcode.charAt(4))))) {
-            isValid = false;
+            return false;
         }
-        return  isValid;
+        return true;
     }
 
     public boolean isNumber(String str) {
         try {
             Integer.parseInt(str);
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             return false;
         }
         return true;
