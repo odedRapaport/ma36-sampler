@@ -1,6 +1,6 @@
 package thrPerpetualSample.data;
 
-public class OriginalLabTest extends PerpetualSampleObject{
+public class OriginalLabTest extends PerpetualSampleObject {
     private String idNum, idType, firstName, lastName, resultDate, birthDate, labcode, stickerNumber, resultTestCorona, variant, testType;
 
     public OriginalLabTest(String idNum, String idType, String firstName, String lastName, String resultDate, String birthDate, String labcode, String stickerNumber, String resultTestCorona, String variant, String testType) {

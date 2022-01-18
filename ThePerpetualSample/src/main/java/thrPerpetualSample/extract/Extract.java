@@ -17,7 +17,7 @@ public class Extract {
         this.parser = parser;
     }
 
-    public List<PerpetualSampleObject> extract(){
+    public List<PerpetualSampleObject> extract() {
         return parser.parse(reader.read(path));
     }
 }

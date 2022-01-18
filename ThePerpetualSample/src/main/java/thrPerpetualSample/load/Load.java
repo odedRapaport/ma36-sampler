@@ -14,7 +14,7 @@ public class Load {
         this.writer = writer;
     }
 
-    public void load(){
+    public void load() {
         this.writer.write(this.objects);
     }
 }

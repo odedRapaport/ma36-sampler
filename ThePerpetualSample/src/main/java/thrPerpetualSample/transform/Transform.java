@@ -15,8 +15,8 @@ public class Transform {
     }
 
     public List<PerpetualSampleObject> transform() {
-        for (Transformation transformation:
-             this.transformations) {
+        for (Transformation transformation :
+                this.transformations) {
             this.objects = transformation.transformation(this.objects);
         }
         return this.objects;

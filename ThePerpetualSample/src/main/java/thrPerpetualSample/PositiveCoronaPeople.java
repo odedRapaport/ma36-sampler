@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PositiveCoronaPeople {
-    public void positiveCoronaPeople(){
+    public void positiveCoronaPeople() {
         Extract labTests = new Extract("C:\\Users\\עודד\\Desktop\\ThePerpetualSample\\ThePerpetualSample\\src\\main\\resources\\LabTests.csv", new ReaderCSV(), new ParserCSVLabTest());
         Extract madaReports = new Extract("C:\\Users\\עודד\\Desktop\\ThePerpetualSample\\ThePerpetualSample\\src\\main\\resources\\MadaReports.csv", new ReaderCSV(), new ParserCSVMadaReport());
         ArrayList<Transformation> transformations = new ArrayList<>();

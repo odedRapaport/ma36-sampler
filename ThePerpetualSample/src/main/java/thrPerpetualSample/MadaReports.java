@@ -10,7 +10,7 @@ import thrPerpetualSample.load.Writer.WriterJsonByCounter;
 import java.util.List;
 
 public class MadaReports {
-    public void madaReports(){
+    public void madaReports() {
         ReaderCSV reader = new ReaderCSV();
         ParserCSVMadaReport parser = new ParserCSVMadaReport();
         Extract extract = new Extract("C:\\Users\\עודד\\Desktop\\ThePerpetualSample\\ThePerpetualSample\\src\\main\\resources\\MadaReports.csv", reader, parser);

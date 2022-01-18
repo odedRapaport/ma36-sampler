@@ -12,14 +12,14 @@ import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
-public class AddHealthCareDetails implements Transformation{
+public class AddHealthCareDetails implements Transformation {
     @Override
     public List<PerpetualSampleObject> transformation(List<PerpetualSampleObject> objects) {
         ArrayList<PerpetualSampleObject> labTests = new ArrayList<>();
         HealthCareInfoProvider provider = new HealthCareInfoProvider();
-        for (PerpetualSampleObject labTest:
-             objects) {
-            OriginalLabTest lt = (OriginalLabTest)labTest;
+        for (PerpetualSampleObject labTest :
+                objects) {
+            OriginalLabTest lt = (OriginalLabTest) labTest;
             try {
                 PersonInsured personInsured = provider.fetchInfo(parseInt(lt.getIdNum()), parseInt(lt.getIdType()));
                 labTests.add(new HealthCareLabTest(lt.getIdNum(), lt.getIdType(), lt.getFirstName(),

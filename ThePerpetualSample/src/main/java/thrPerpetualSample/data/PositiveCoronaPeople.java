@@ -1,6 +1,6 @@
 package thrPerpetualSample.data;
 
-public class PositiveCoronaPeople extends PerpetualSampleObject{
+public class PositiveCoronaPeople extends PerpetualSampleObject {
     private String mdaCode, idNum, idType, firstName, lastName, city, street,
             buildingNumber, barcode, birthDate, labCode, resultDate, takeDate,
             stickerNumber, resultTestCorona, variant, testType;

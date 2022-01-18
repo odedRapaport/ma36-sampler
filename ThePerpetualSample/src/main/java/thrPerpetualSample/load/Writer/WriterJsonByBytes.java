@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class WriterJsonByBytes implements Writer{
+public class WriterJsonByBytes implements Writer {
     private String path;
     private int limit;
 
@@ -26,26 +26,25 @@ public class WriterJsonByBytes implements Writer{
         ArrayList<PerpetualSampleObject> limitList = new ArrayList<>();
         int totalBytes = 0;
         int index = 0;
-        for (PerpetualSampleObject o:
-             objects) {
+        for (PerpetualSampleObject o :
+                objects) {
             JsonNode node = objectMapper.valueToTree(o);
-            if (totalBytes + bytesCounter(node) < limit){
+            if (totalBytes + bytesCounter(node) < limit) {
                 limitList.add(o);
-                totalBytes+= bytesCounter(node);
-            }
-            else {
+                totalBytes += bytesCounter(node);
+            } else {
                 threadWriter(index, limitList, path);
                 limitList.clear();
                 totalBytes = 0;
                 limitList.add(o);
-                totalBytes+= bytesCounter(node);
+                totalBytes += bytesCounter(node);
                 index++;
             }
         }
         threadWriter(index, limitList, path);
     }
 
-    public void threadWriter(int index, List<PerpetualSampleObject> limitList, String path){
+    public void threadWriter(int index, List<PerpetualSampleObject> limitList, String path) {
         Thread thread = new Thread(() -> {
             ObjectMapper objectMapper = new ObjectMapper();
             try {
@@ -57,9 +56,9 @@ public class WriterJsonByBytes implements Writer{
         thread.start();
     }
 
-    public int bytesCounter(JsonNode jsonNode){
+    public int bytesCounter(JsonNode jsonNode) {
         int counter = 0;
-        if (jsonNode!=null) {
+        if (jsonNode != null) {
             for (Iterator<JsonNode> nodes = jsonNode.elements(); nodes.hasNext(); ) {
                 nodes.next();
                 counter++;
