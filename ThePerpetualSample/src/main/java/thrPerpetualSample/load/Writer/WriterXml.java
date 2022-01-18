@@ -8,8 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WriterXml implements Writer {
+    private String path;
+    private int limit;
+
+    public WriterXml(String path, int limit) {
+        this.path = path;
+        this.limit = limit;
+    }
+
     @Override
-    public void write(List<PerpetualSampleObject> objects, String path, int limit) {
+    public void write(List<PerpetualSampleObject> objects) {
         for (int i = 0; i < threadCount(objects, limit); i++) {
             threadWriter(i, objects, path, limit);
         }

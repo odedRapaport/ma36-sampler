@@ -7,18 +7,14 @@ import java.util.List;
 
 public class Load {
     private List<PerpetualSampleObject> objects;
-    private String path;
     private Writer writer;
-    private int limit;
 
-    public Load(List<PerpetualSampleObject> objects, String path, Writer writer, int limit) {
+    public Load(List<PerpetualSampleObject> objects, Writer writer) {
         this.objects = objects;
-        this.path = path;
         this.writer = writer;
-        this.limit = limit;
     }
 
     public void load(){
-        this.writer.write(this.objects, this.path, this.limit);
+        this.writer.write(this.objects);
     }
 }

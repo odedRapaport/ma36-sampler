@@ -21,7 +21,7 @@ public class LabTests {
         transformations.add(new AddHealthCareDetails());
         Transform transform = new Transform(objects,transformations);
         objects = transform.transform();
-        Load load = new Load(objects, "C:\\Users\\עודד\\Desktop\\ThePerpetualSampleFiles\\LABTESTS\\", new WriterXml(), 50000);
+        Load load = new Load(objects, new WriterXml("C:\\Users\\עודד\\Desktop\\ThePerpetualSampleFiles\\LABTESTS\\", 50000));
         load.load();
     }
 }

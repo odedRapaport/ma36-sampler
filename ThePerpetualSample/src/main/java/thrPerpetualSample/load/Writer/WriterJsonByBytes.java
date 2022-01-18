@@ -12,8 +12,16 @@ import java.util.Iterator;
 import java.util.List;
 
 public class WriterJsonByBytes implements Writer{
+    private String path;
+    private int limit;
+
+    public WriterJsonByBytes(String path, int limit) {
+        this.path = path;
+        this.limit = limit;
+    }
+
     @Override
-    public void write(List<PerpetualSampleObject> objects, String path, int limit) {
+    public void write(List<PerpetualSampleObject> objects) {
         ObjectMapper objectMapper = new ObjectMapper();
         ArrayList<PerpetualSampleObject> limitList = new ArrayList<>();
         int totalBytes = 0;

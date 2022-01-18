@@ -22,7 +22,7 @@ public class PositiveCoronaPeople {
         transformations.add((new MergeMadaWithTests(labTests.extract())));
         Transform transform = new Transform(madaReports.extract(), transformations);
         List<PerpetualSampleObject> objects = transform.transform();
-        Load load = new Load(objects, "C:\\Users\\עודד\\Desktop\\ThePerpetualSampleFiles\\POSITIVE_CORONA_PEOPLE\\", new WriterJsonByBytes(), 20000000);
+        Load load = new Load(objects, new WriterJsonByBytes("C:\\Users\\עודד\\Desktop\\ThePerpetualSampleFiles\\POSITIVE_CORONA_PEOPLE\\", 20000000));
         load.load();
     }
 }

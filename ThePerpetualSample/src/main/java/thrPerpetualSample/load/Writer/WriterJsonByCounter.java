@@ -10,8 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WriterJsonByCounter implements Writer{
+    private String path;
+    private int limit;
+
+    public WriterJsonByCounter(String path, int limit) {
+        this.path = path;
+        this.limit = limit;
+    }
+
     @Override
-    public void write(List<PerpetualSampleObject> objects, String path, int limit) {
+    public void write(List<PerpetualSampleObject> objects) {
         for (int i = 0; i<threadCount(objects, limit); i++){
             threadWriter(i,objects,path,limit);
         }
