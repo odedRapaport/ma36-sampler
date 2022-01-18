@@ -27,7 +27,6 @@ public class AddHealthCareDetails implements Transformation{
                         lt.getStickerNumber(), lt.getResultTestCorona(), lt.getVariant(), lt.getTestType(),
                         personInsured.getJoinDate().toString(), (Integer.toString(personInsured.getHealthCareId())), personInsured.getHealthCareName()));
             } catch (InvalidIdException e) {
-                e.printStackTrace();
             }
         }
         return labTests;

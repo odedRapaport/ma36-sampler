@@ -9,4 +9,28 @@ public class HealthCareLabTest extends OriginalLabTest{
         this.HealthCareId = healthCareId;
         this.healthCareName = healthCareName;
     }
+
+    public String getJoinDate() {
+        return joinDate;
+    }
+
+    public void setJoinDate(String joinDate) {
+        this.joinDate = joinDate;
+    }
+
+    public String getHealthCareId() {
+        return HealthCareId;
+    }
+
+    public void setHealthCareId(String healthCareId) {
+        HealthCareId = healthCareId;
+    }
+
+    public String getHealthCareName() {
+        return healthCareName;
+    }
+
+    public void setHealthCareName(String healthCareName) {
+        this.healthCareName = healthCareName;
+    }
 }

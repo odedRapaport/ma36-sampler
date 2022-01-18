@@ -3,10 +3,9 @@ package thrPerpetualSample;
 import thrPerpetualSample.data.PerpetualSampleObject;
 import thrPerpetualSample.extract.Extract;
 import thrPerpetualSample.extract.parser.ParserCSVLabTest;
-import thrPerpetualSample.extract.parser.ParserCSVMadaReport;
 import thrPerpetualSample.extract.reader.ReaderCSV;
 import thrPerpetualSample.load.Load;
-import thrPerpetualSample.load.Writer.WriterJson;
+import thrPerpetualSample.load.Writer.WriterXml;
 import thrPerpetualSample.transform.Transform;
 import thrPerpetualSample.transform.Transformations.AddHealthCareDetails;
 import thrPerpetualSample.transform.Transformations.Transformation;
@@ -22,6 +21,8 @@ public class Main {
         transformations.add(new AddHealthCareDetails());
         Transform transform = new Transform(objects,transformations);
         objects = transform.transform();
+        Load load = new Load(objects, "C:\\Users\\עודד\\Desktop\\ThePerpetualSampleFiles\\LABTESTS\\", new WriterXml(), 200);
+        load.load();
         System.out.println();
     }
 }
