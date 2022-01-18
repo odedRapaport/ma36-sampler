@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WriterJson implements Writer{
+public class WriterJsonByCounter implements Writer{
     @Override
     public void write(List<PerpetualSampleObject> objects, String path, int limit) {
         for (int i = 0; i<threadCount(objects, limit); i++){

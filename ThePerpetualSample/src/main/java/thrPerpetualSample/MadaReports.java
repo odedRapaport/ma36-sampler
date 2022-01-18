@@ -5,7 +5,7 @@ import thrPerpetualSample.extract.Extract;
 import thrPerpetualSample.extract.parser.ParserCSVMadaReport;
 import thrPerpetualSample.extract.reader.ReaderCSV;
 import thrPerpetualSample.load.Load;
-import thrPerpetualSample.load.Writer.WriterJson;
+import thrPerpetualSample.load.Writer.WriterJsonByCounter;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class MadaReports {
         ParserCSVMadaReport parser = new ParserCSVMadaReport();
         Extract extract = new Extract("C:\\Users\\עודד\\Desktop\\ThePerpetualSample\\ThePerpetualSample\\src\\main\\resources\\MadaReports.csv", reader, parser);
         List<PerpetualSampleObject> objects = extract.extract();
-        Load load = new Load(objects,"C:\\Users\\עודד\\Desktop\\ThePerpetualSampleFiles\\mada_reports\\", new WriterJson(), 50000);
+        Load load = new Load(objects,"C:\\Users\\עודד\\Desktop\\ThePerpetualSampleFiles\\mada_reports\\", new WriterJsonByCounter(), 50000);
         load.load();
         System.out.println();
     }
